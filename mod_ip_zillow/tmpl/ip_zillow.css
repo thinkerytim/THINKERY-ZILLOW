@@ -1,0 +1,7 @@
+/* tabs */
+dl.tabs {float: left;margin: 0px 0 -1px 0;z-index: 50;}
+dl.tabs dt {float: left;padding: 4px 10px;border-left: 1px solid #999;border-right: 1px solid #999;border-top: 1px solid #999;margin-left: 0px;margin-right: 2px;background: #666;color: #fff;}
+dl.tabs dt.open {background: #F9F9F9;border-bottom: 1px solid #F9F9F9;z-index: 100;color: #666666;}
+div.current {clear: both; border: none;padding: 10px;}
+div.current dd {padding: 0; margin: 0;}
+div.ip_spacer {display: block; height: 0px;}

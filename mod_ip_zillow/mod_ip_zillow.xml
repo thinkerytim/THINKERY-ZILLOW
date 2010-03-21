@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="module">
+	<name>Thinkery Zillow Module</name>
+	<author>The Thinkery LLC</author>
+	<creationDate>February 12, 2010</creationDate>
+	<copyright>Copyright (C) 2010 The Thinkery. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>info@thethinkery.net</authorEmail>
+	<authorUrl>www.thethinkery.net</authorUrl>
+	<version>1.5</version>
+	<description>Get Zillow Information by Address</description>
+	<files>
+		<filename module="mod_ip_zillow">mod_ip_zillow.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+	</files>
+	<params>
+		<param name="tabtitle" type="text" default="Zillow Information" label="Title" description="Title to appear with results" />
+		<param name="moduleclass_sfx" type="text" default="" label="Module Class" description="Module Class" />
+		<param type="spacer" />
+        <param name="zws-id" type="text" default="" label="ZWS-ID" description="Your Zillow API key. If you don't have, go to https://www.zillow.com/webservice/Registration.htm" />
+        <param name="width" type="text" default="600" label="Width" description="Width of the Zillow results panel-- max 600px." />
+        <param name="height" type="text" default="300" label="Height" description="Height of the Zillow results panel-- max 300px." />
+        <param name="unit-type" type="list" default="percent" label="Unit" description="Unit to be used in the returned charts." >
+        	<option value="percent">Percent</option>
+        	<option value="dollar">Dollar</option>
+        </param>
+        <param name="chartDuration" type="list" default="" label="Duration" description="Duration of chart timeline." >
+        	<option value="1year">1 yr</option>
+        	<option value="5years">5 yrs</option>
+        	<option value="10years">10 yrs</option>
+        </param>
+        <param name="count" type="text" default="5" label="Comps" description="Number of comps to return." />
+        <param type="spacer" default="Display parameters" />
+        <param name="show_info" type="radio" default="1" label="Show Property Info" description="Show Zillow property info">
+        	<option value="0">No</option>
+        	<option value="1">Yes</option>
+        </param>
+        <param name="show_chart" type="radio" default="1" label="Show Value Chart" description="Show Zillow property value chart">
+        	<option value="0">No</option>
+        	<option value="1">Yes</option>
+        </param>
+        <param name="show_region_chart" type="radio" default="1" label="Show Region Chart" description="Show Zillow region value chart">
+        	<option value="0">No</option>
+        	<option value="1">Yes</option>
+        </param>
+        <param name="show_comps" type="radio" default="1" label="Show Property Comps" description="Show Zillow property value comps">
+        	<option value="0">No</option>
+        	<option value="1">Yes</option>
+        </param>
+	</params>
+</install>
