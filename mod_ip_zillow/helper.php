@@ -28,8 +28,15 @@ class ModIpZillowHelper
 		
 		$url = "http://www.zillow.com/webservice/GetSearchResults.htm?$query_string";	
 		
-		$output = file_get_contents($url);
-		$output = new SimpleXMLElement($output);
+                $ch = curl_init();
+                $timeout = 5;
+                curl_setopt($ch,CURLOPT_URL,$url);
+                curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+                curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,$timeout);
+                $data = curl_exec($ch);
+                curl_close($ch);
+
+		$output = new SimpleXMLElement($data);
 		return $output;
 	}
 	
@@ -55,8 +62,15 @@ class ModIpZillowHelper
 		
 		$url = "http://www.zillow.com/webservice/GetChart.htm?$query_string";
 		
-		$output = file_get_contents($url);
-		$output = new SimpleXMLElement($output);
+                $ch = curl_init();
+                $timeout = 5;
+                curl_setopt($ch,CURLOPT_URL,$url);
+                curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+                curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,$timeout);
+                $data = curl_exec($ch);
+                curl_close($ch);
+
+		$output = new SimpleXMLElement($data);
 		if ($output->message[0]->code != 0){
 			return "There was a problem with the Zillow Chart request-- Error code " . $output->message[0]->code . "<br />" . $url;
 		}else{
@@ -93,8 +107,15 @@ class ModIpZillowHelper
 		
 		$url = "http://www.zillow.com/webservice/GetRegionChart.htm?$query_string";
 		
-		$output = file_get_contents($url);
-		$output = new SimpleXMLElement($output);
+                $ch = curl_init();
+                $timeout = 5;
+                curl_setopt($ch,CURLOPT_URL,$url);
+                curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+                curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,$timeout);
+                $data = curl_exec($ch);
+                curl_close($ch);
+
+		$output = new SimpleXMLElement($data);
 		if ($output->message[0]->code != 0){
 			return "There was a problem with the Zillow Chart request-- Error code " . $output->message[0]->code . "<br />" . $url;
 		}else{
@@ -123,8 +144,15 @@ class ModIpZillowHelper
 		
 		$url = "http://www.zillow.com/webservice/GetComps.htm?$query_string";	
 		
-		$output = file_get_contents($url);
-		$output = new SimpleXMLElement($output);
+                $ch = curl_init();
+                $timeout = 5;
+                curl_setopt($ch,CURLOPT_URL,$url);
+                curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+                curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,$timeout);
+                $data = curl_exec($ch);
+                curl_close($ch);
+
+		$output = new SimpleXMLElement($data);
 		if ($output->message[0]->code != 0){
 			return "There was a problem with the Zillow Comps request-- Error code " . $output->message[0]->code . "<br />" . $url;
 		}else{	
