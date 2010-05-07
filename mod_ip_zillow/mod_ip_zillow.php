@@ -14,15 +14,14 @@ if(!$params->get('zws-id')) {
 }
 
 if (JRequest::getVar('address')) {
-	$address 		= JRequest::getVar('address');
-	$citystatezip 	= JRequest::getVar('citystatezip');
-	$render_tabs = true;
+	$address 		= JRequest::getString('address');
+	$citystatezip 	= JRequest::getString('citystatezip');
+	$render_tabs     = true;
 }
 
 $this->baseurl = JURI::root(true);
-$document 	   = & JFactory::getDocument();
+$document = & JFactory::getDocument();
 $document->addStyleSheet($this->baseurl.'/modules/mod_ip_zillow/tmpl/ip_zillow.css');
-
 
 $prop_info = false;
 
