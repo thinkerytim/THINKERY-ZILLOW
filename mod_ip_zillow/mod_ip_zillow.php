@@ -1,3 +1,4 @@
+#testing
 <?php
 /**
  * @copyright Copyright (C) 2010 The Thinkery LLC - www.thethinkery.net. All rights reserved.
@@ -30,7 +31,7 @@ $init_params = array(
 		'title'				=> $params->get('tabtitle'),
 		'zws-id' 			=> $params->get('zws-id'),
 		'width' 			=> $params->get('width'),
-		'height'			=> $params->get('height'),
+#		'height'			=> $params->get('height'),
 		'duration'			=> $params->get('chartDuration'),
 		'unit_type' 		=> $params->get('unit-type'),
 		'count' 			=> $params->get('count'),
